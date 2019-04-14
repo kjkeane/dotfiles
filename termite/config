@@ -1,0 +1,20 @@
+[options]
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+mouse_autohide = false
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+font = Fira Mono for Powerline 9
+scrollback_lines = 10000
+search_wrap = true
+
+#
+cursor_blink = off
+
+cursor_shape = ibeam
+
+browser = firefox
+
+filter_unmatched_urls = true
