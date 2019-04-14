@@ -1,0 +1,6 @@
+rofi.theme: ~/.cache/wal/colors-rofi-light.rasi
+rofi.combi-modi: window,run,ssh
+rofi.display-combi: >
+rofi.parse-known-hosts: true
+rofi.modi: combi
+rofi.terminal: termite
