@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+sxhkd &
+
+bspc monitor -d 1 2 3 4 5
+
+bspc config border_width         2
+bspc config window_gap          10
+
+bspc config split_ratio           0.52
+bspc config borderless_monocle    true
+bspc config gapless_monocle       true
+bspc config focus_follows_pointer false
+bspc config pointer_follows_focus false
+bspc config ignore_ewmh_focus     true
+
+sh "$HOME/.cache/wal/colors.sh"
+
+bspc monitor $DISPLAY -d '1' '2' '3' '4' '5'
