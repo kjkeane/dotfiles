@@ -1,6 +1,8 @@
-rofi.theme: ~/.cache/wal/colors-rofi-light.rasi
-rofi.combi-modi: window,run,ssh
-rofi.display-combi: >
-rofi.parse-known-hosts: true
-rofi.modi: combi
-rofi.terminal: termite
+rofi.theme:                 ~/.cache/wal/colors-rofi-dark.rasi
+rofi.terminal:              /usr/bin/termite
+rofi.font:                  Iosveka 12
+rofi.combi-modi:            window,run,ssh
+rofi.display-combi:         >
+rofi.parse-known-hosts:     true
+rofi.modi:                  combi
+rofi.window-format:         {c} {t}
