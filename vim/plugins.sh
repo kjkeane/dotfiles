@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#Create new folder in ~/.vim/pack that contains a start folder and cd into it
+# Create new folder in ~/.vim/pack that contains a start folder and cd into it
 #
 # Arugments:
 #   package_group, a string folder name to create and change into.
@@ -8,11 +8,9 @@
 # Examples:
 #   set_group synta-highlighting
 #
-function set_group () {
-  package_group=$1
-  path="$HOME/.vim/pack/$package_group/start"
+function create_plugin_dir() {
+  path="$HOME/.vim/pack/plugins/start"
   mkdir -p "$path"
-  cd "$path" || exit
 }
 
 # Clone or update a git repo in the current directory
@@ -23,24 +21,21 @@ function set_group () {
 # Examples:
 #   package https://github.com/saltstack/salt-vim.git
 #
-function package () {
+function install_plugin() {
   repo_url=$1
-  expected_repo=$(basename "$repo_url" .git)
-  if [ -d "$expected_repo" ];
+  plugin_name=$(basename "$repo_url" .git)
+  if [ -d "$plugin_name" ];
   then
-    cd "$expected_repo" || exit
-    result=$(git pull --force)
-    echo "$expected_repo: $result"
+    cd "$HOME/.vim/pack/$plugin_name" || exit
+    results=$(git pull --force)
+    echo "$plugin_name: $result"
   else
-    echo "$expected_repo: Installing..."
-    git clone -q "$repo_url"
+    echo "$plugin_name: Installing..."
+    git clone -q "$repo_url" $HOME/.vim/pack/plugins/start/$plugin_name
   fi
 }
 
 (
-set_group plugins
-package https://github.com/saltstack/salt-vim.git &
-wait
-) &
-
-wait
+create_plugin_dir
+install_plugin https://github.com/saltstack/salt-vim.git
+)
