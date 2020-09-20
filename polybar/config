@@ -69,7 +69,8 @@ module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-2 = FontAwesome:style=bold:size=10
+font-3 = siji:pixelsize=10;1
 
 modules-left = bspwm
 modules-right = filesystem memory cpu wlan eth battery temperature date
@@ -136,7 +137,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlan0
+interface = wlp1s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -249,6 +250,7 @@ animation-charging-framerate = 750
 type = internal/temperature
 thermal-zone = 2
 warn-temperature = 60
+hwmon-path = /sys/devices/platform/thinkpad_hwmon/hwmon/hwmon4/temp1_input
 
 format = <ramp> <label>
 format-underline = #f50a4d
