@@ -1,0 +1,29 @@
+! disable scrollbar
+URxvt*scrollBar: false
+! do not scroll with output
+URxvt.scrollTtyOutput: false
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt.scrollWithBuffer: true
+! scroll back to bottom on keypress
+URxvt.scrollTtyKeyPress: true
+URxvt.transparent: false
+
+! cursor
+URxvt.cursorBlink: true
+URxvt.cusrorUnderline: true
+
+! hinting
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.antialias: true
+Xft.rgba: rgb
+
+! font
+URxvt.font: xft:Iosevka:size=12:antialias=true,\
+            xft:Font Awesome 5 Free,\
+            xft:Font Awesome 5 Free Solid,\
+            xft:Font Awesome 5 Brands
+
+URxvt.perl-ext-common: default,matcher,resize-font
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
